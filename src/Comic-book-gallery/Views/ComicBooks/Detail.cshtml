@@ -1,41 +1,30 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title="Comic Book Detail";
 
 
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
+    <h1>@ViewBag.SeriesTitle</h1>
+    <h2> @ViewBag.IssueNumber</h2>
+
+    <h5> Description:</h5>
+    <div>  @Html.Raw(ViewBag.Description)</div>
+
+    <h5>Artists:</h5>
+    @if (ViewBag.Artists.Length > 0)
+    {
     <div>
-        <h1>@ViewBag.SeriesTitle</h1>
-        <h2> @ViewBag.IssueNumber</h2>
+        <ul>
 
-        <h5> Description:</h5>
-        <div>  @Html.Raw(ViewBag.Description)</div>
+            @foreach (var artist in ViewBag.Artists)
+            {
+                <li>
 
-        <h5>Artists:</h5>
-      @if (ViewBag.Artists.Length>0)
-      {
-        <div>
-            <ul>
-
-                @foreach (var artist in ViewBag.Artists)
-                {
-                    <li>
-
-                        <text>*@artist </text>
-                    </li>
-                }
-            </ul>
-
+                    <text>*@artist </text>
+                </li>
+            }
+        </ul>
         </div>
-      }
-    </div>
-</body>
-</html>
+    }
