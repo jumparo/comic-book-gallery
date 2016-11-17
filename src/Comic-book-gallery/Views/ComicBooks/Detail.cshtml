@@ -6,9 +6,7 @@
 
 }
 
-
 <h2>@Model.DisplayText</h2>
-
 <div class="row">
     <div class="col-md-6">
         <div class="well">
@@ -19,11 +17,9 @@
             {
                 <div>
                     <ul>
-
                         @foreach (var artist in Model.Artists)
                         {
                             <li>
-
                                 <text>*@artist.Role:@artist.Name </text>
                             </li>
                         }
@@ -35,19 +31,13 @@
         <div>  @Html.Raw(Model.DescriptionHtml)</div>
     </div>
     <div class="col-md-6">
-        <img src="/Images/the-amazing-spider-man-700.jpg"
-             alt="The Amazing Spider-Man #700" class="img-responsive" />
+        <img src="/Images/@Model.CoverImageFileName"
+             alt="@Model.DisplayText" class="img-responsive" />
     </div>
 </div>
-
-
-
 
 
 <h1>@Model.SeriesTitle</h1>
 <h2> @Model.IssueNumber</h2>
 
-
-
 <h5>Artists:</h5>
-
